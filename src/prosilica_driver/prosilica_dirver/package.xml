@@ -1,0 +1,31 @@
+<package>
+  <name>prosilica_dirver</name>
+  <version>0.0.1</version>
+  <description>
+  "Prosilica GigE SDK"
+    <p>
+  The PvAPI SDK from AVT (originally Prosilica) allows users to control and
+  capture images from AVT's GigE Vision cameras. The ROS package automatically
+  downloads and extracts a tarball, installs headers and libraries, and builds a
+  few useful example programs.
+     </p>
+     <p>
+  We currently use version 1.20 of the SDK, released 7 April 2009. It is known
+  to work with version 1.36 of the AVT GigE Vision camera firmware. We will
+  update the version for bugfixes and for new features we deem particularly
+  useful to vision applications.
+    </p>
+  </description>
+  <author>Allied Vision Technologies. ROS package maintained by William Woodall - wwoodall@willowgarage.com.</author>
+  <license>Commercial</license>
+  <maintainer email="wwoodall@willowgarage.com">wwoodall</maintainer>
+  <url>http://www.ros.org/wiki/prosilica_gige_sdk</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>prosilica_gige_sdk</run_depend>
+  <run_depend>prosilica_camera</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

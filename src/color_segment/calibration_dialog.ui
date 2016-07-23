@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1157</width>
+    <height>733</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="receive_image_btn">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>630</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>update_image</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="loadImage_Btn">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>670</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>LoadImage</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="Color_Box">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>610</y>
+     <width>81</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="title">
+    <string>color_selection</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>53</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="YUV_RadioBtn">
+       <property name="text">
+        <string>YUV</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="HSI_RadioBtn">
+       <property name="text">
+        <string>HSI</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="Object_Box">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>610</y>
+     <width>121</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>object_selection</string>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>121</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QRadioButton" name="ball_seg_Btn">
+       <property name="text">
+        <string>ball_segment</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="obs_seg_Btn">
+       <property name="text">
+        <string>obs_segment</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="field_segment_Btn">
+       <property name="contextMenuPolicy">
+        <enum>Qt::ActionsContextMenu</enum>
+       </property>
+       <property name="text">
+        <string>field_segment</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="segment_result_btn">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>630</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>segment_result</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="Image_ROI_Box">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>610</y>
+     <width>111</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Image_ROI</string>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>101</width>
+      <height>79</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QRadioButton" name="BigCircle_Btn">
+       <property name="text">
+        <string>BigCircle</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="SmallCircle_Btn">
+       <property name="contextMenuPolicy">
+        <enum>Qt::DefaultContextMenu</enum>
+       </property>
+       <property name="text">
+        <string>SmallCircle</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Save_ROI_Btn">
+       <property name="text">
+        <string>Save_ROI</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+    <zorder>Save_ROI_Btn</zorder>
+    <zorder>BigCircle_Btn</zorder>
+    <zorder>SmallCircle_Btn</zorder>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="Save_Result_Btn">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>670</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save_Result</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Load_Result_Btn">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>630</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Load_Result</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="white_wave_Btn">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>630</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::WheelFocus</enum>
+   </property>
+   <property name="text">
+    <string>white_wave</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="show_segmentBtn">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>670</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>show_segment</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Save_image_Btn">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>672</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save_Image</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="load_whites_Btn">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>630</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::WheelFocus</enum>
+   </property>
+   <property name="text">
+    <string>load_whites</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="save_whits_Btn">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>670</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::ActionsContextMenu</enum>
+   </property>
+   <property name="text">
+    <string>save_whits</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Error_table_Btn">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>630</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::WheelFocus</enum>
+   </property>
+   <property name="text">
+    <string>ErrorTable</string>
+   </property>
+  </widget>
+  <zorder>Error_table_Btn</zorder>
+  <zorder>receive_image_btn</zorder>
+  <zorder>loadImage_Btn</zorder>
+  <zorder>Color_Box</zorder>
+  <zorder>Object_Box</zorder>
+  <zorder>segment_result_btn</zorder>
+  <zorder>Image_ROI_Box</zorder>
+  <zorder>Save_Result_Btn</zorder>
+  <zorder>Load_Result_Btn</zorder>
+  <zorder>white_wave_Btn</zorder>
+  <zorder>show_segmentBtn</zorder>
+  <zorder>Save_image_Btn</zorder>
+  <zorder>load_whites_Btn</zorder>
+  <zorder>save_whits_Btn</zorder>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,32 @@
+# Global ARCHitecture settings for the Sample code
+#
+# this file should be adapted to your platform
+
+# Target CPU
+CPU     = x86
+#CPU     = x64
+
+# Target OS
+OS      = LINUX
+
+# Optimisation level
+OPT     = -O3 -m32
+#OPT     = -O3
+
+# compiler version
+CVER    = 4.5
+# compiler
+CC	    = g++-$(CVER)
+# linker
+LD	    = ld
+AR	    = ar
+
+# some flags
+DFLAGS	= -D_$(CPU) -D_$(OS)
+FLAGS   = -fexceptions -I/usr/include $(DFLAGS)
+
+## few locations
+INC_DIR	= ../../inc-pc
+BIN_DIR = ../../bin-pc/$(CPU)
+LIB_DIR = ../../lib-pc/$(CPU)
+OBJ_DIR	= ./obj/$(CPU)

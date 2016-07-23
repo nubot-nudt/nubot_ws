@@ -1,0 +1,86 @@
+<!--
+Configurable launch file to start a Prosilica camera.
+
+You can uncomment the viewer at bottom if you want to view the image stream.
+-->
+
+<launch>
+
+  <!-- Namespace to publish in -->
+  <arg name="camera" default="camera" />
+
+  <!-- You can select the camera to open by its GUID or IP address. In some cases
+       if the camera is connected through a switch (not visible to ListCameras),
+       it may only be possible to open a camera by its fixed IP address.
+       
+       For help configuring your camera or determining its IP address, see
+       http://www.ros.org/wiki/prosilica_camera/Tutorials.
+       
+       By default, when neither argument is set, open the first camera found.
+       If both are set, open by IP address and verify the GUID matches.
+  -->
+  <arg name="guid" default="" />
+  <arg name="ip_address" default="" />
+
+  <!-- Trigger mode: 'streaming' or 'polled' -->
+  <arg name="trigger_mode" default="streaming" />
+
+  <!-- tf frame id associated with this camera -->
+  <arg name="frame_id" default="$(arg camera)_optical_frame" />
+
+  <!-- The camera node -->
+  <node name="$(arg camera)_driver" pkg="prosilica_camera" type="prosilica_node" output="screen">
+    <remap from="camera" to="$(arg camera)" />
+
+    <param name="guid" type="str" value="$(arg guid)" />
+   <!-- <param name="ip_address" type="str" value="$(arg ip_address)" /> -->
+    <param name="trigger_mode" value="$(arg trigger_mode)" />
+    <param name="frame_id" value="$(arg frame_id)" />
+    
+    <param name="x_offset" type="int"    value="107" />
+    <param name="y_offset" type="int"    value="7" />
+    <param name="width"    type="int"    value="479" />
+    <param name="height"   type="int"    value="479" />
+    <param name="exposure" type="double" value="0.030" />
+    <param name="gain"     type="int"    value="5" />
+
+  </node>
+
+  <!-- If running in polled mode, change ns to match your service call argument. -->
+  <group ns="$(arg camera)">
+
+      <!--
+      Uncomment below if you want to view the image stream on a monochrome
+      camera. (You will see the Bayer coded image on a color camera)
+
+      You will have to run the following command first:
+      $ rosmake image_view
+      -->
+
+    <!--
+    <node pkg="image_view" type="image_view" respawn="false" name="prosilica_viewer_mono">
+      <param name="autosize" type="bool" value="False" />
+      <param name="window_name" type="str" value="'Prosilica Camera (Mono)'" />
+      <remap from="image" to="image_raw" />
+    </node>
+    -->
+
+      <!--
+      Uncomment below if you want to view the image stream on a color camera.
+
+      You will have to run the following command first:
+      $ rosmake image_view image_proc
+      -->
+
+    <!--
+    <node pkg="image_proc" type="image_proc" respawn="false" name="prosilica_image_proc" />
+    <node pkg="image_view" type="image_view" respawn="false" name="prosilica_viewer_color">
+      <param name="autosize" type="bool" value="False" />
+      <param name="window_name" type="str" value="'Prosilica Camera (Color)'" />
+      <remap from="image" to="image_color" />
+    </node>
+    -->
+
+  </group>
+
+</launch>

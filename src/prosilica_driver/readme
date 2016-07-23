@@ -1,0 +1,10 @@
+
+用catkin_make可以编译两个包
+
+全向视觉系统IP设置，如果已经知道相机IP，将计算机IP设置到与相机IP一个地址段即可以，否则需要得到相机IP，方法：
+sudo tcpdump -n src port 3956 -i eth0
+rosrun prosilica_gige_sdk ListCameras 
+即可看到相机IP，然后配置到一个IP段即可
+
+
+rosrun prosilica_camera prosilica_node

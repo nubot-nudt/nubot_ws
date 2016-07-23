@@ -1,0 +1,15 @@
+<!--
+Starts a PR2 Prosilica camera in polled mode.
+This file exists mainly for backwards compatibility.
+-->
+
+<launch>
+
+  <include file="$(find prosilica_camera)/launch/generic.launch">
+    <arg name="camera"       value="prosilica" />
+   <!-- <arg name="ip_address"   value="169.254.0.2" />-->
+    <arg name="trigger_mode" value="polled" />
+    <arg name="frame_id"     value="high_def_optical_frame" />
+  </include>
+
+</launch>

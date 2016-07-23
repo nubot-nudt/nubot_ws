@@ -1,0 +1,55 @@
+# Global ARCHitecture settings for the Sample code
+#
+# this file should be adapted to your platform
+
+# Target CPU
+CPU     = x64
+#CPU     = x86
+#CPU     = arm
+#FLOAT   = HF   #always select either hard-float or soft-float for arm
+#FLOAT   = SF   #always select either hard-float or soft-float for arm
+
+# Target OS
+OS      = LINUX
+
+# Optimisation level
+#OPT     = -O3 -m32
+OPT     = -O3
+
+# compiler version
+CVER    = 4.6
+# compiler
+CC      = g++-$(CVER)
+# linker
+LD      = ld
+AR      = ar
+SP      = strip
+
+# some flags
+DFLAGS	= -D_$(CPU) -D_$(OS)
+#HSFLAGS =-mthumb -march=armv7 -mfloat-abi=hard
+#HSFLAGS =-marm -march=armv4t -mfloat-abi=soft
+FLAGS   = -fno-strict-aliasing -fexceptions -I/usr/include $(DFLAGS) $(HSFLAGS)
+
+## path where to look for PvAPI shared lib
+RPATH	= -Wl,--rpath -Wl,./ 
+
+## few locations
+INC_DIR	  = ../../inc-pc
+BIN_DIR   = ../../bin-pc/$(CPU)/$(FLOAT)
+LIB_DIR   = ../../lib-pc/$(CPU)/$(FLOAT)
+OBJ_DIR	  = ./obj/$(CPU)
+EXTRA_LIB = -lpthread -lrt
+
+## TIFF library
+LTIFF   = -ltiff
+LJPEG   = -ljpeg
+
+## libs (shared/static)
+PVLIB   = -L$(BIN_DIR) -lPvAPI
+SOLIB	= $(EXTRA_LIB) -Bdynamic -lm -lc
+SALIB	= -Bstatic $(LIB_DIR)/$(CVER)/libPvAPI.a
+IMLIB   = -Bstatic $(LIB_DIR)/$(CVER)/libImagelib.a -Bdynamic $(LTIFF)
+
+## final compilation flags
+CFLAGS	= $(OPT) $(FLAGS) -Wall -I$(INC_DIR) -D_REENTRANT $(EXTRA)

@@ -1,0 +1,43 @@
+<package>
+  <name>prosilica_camera</name>
+  <version>0.0.1</version>
+  <description> A ROS driver node for AVT/Prosilica Gigabit Ethernet (GigE) cameras.</description>
+
+  <license>BSD,Commercial</license>
+  <maintainer email="wwoodall@willowgarage.com">William Woodall</maintainer>
+  <url>http://www.ros.org/wiki/prosilica_gige_sdk</url>
+  <author>Allied Vision Technologies. ROS package maintained by William Woodall - wwoodall@willowgarage.com.</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>prosilica_gige_sdk</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend> 
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>self_test</build_depend> 
+  <build_depend>diagnostic_updater</build_depend> 
+  <build_depend>diagnostic_msgs</build_depend> 
+  <build_depend>driver_base</build_depend> 
+  <build_depend>message_generation</build_depend> 
+  <build_depend>camera_calibration_parsers</build_depend> 
+  <build_depend>polled_camera</build_depend> 
+  <build_depend>dynamic_reconfigure</build_depend>  
+
+  <run_depend>prosilica_gige_sdk</run_depend> 
+  <run_depend>roscpp</run_depend> 
+  <run_depend>std_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>self_test</run_depend>
+  <run_depend>diagnostic_updater</run_depend>
+  <run_depend>diagnostic_msgs</run_depend> 
+  <run_depend>driver_base</run_depend>
+  <run_depend>message_generation</run_depend>
+  <run_depend>camera_calibration_parsers</run_depend>
+  <run_depend>polled_camera</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+
+</package>
+
