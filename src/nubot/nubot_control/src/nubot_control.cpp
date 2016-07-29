@@ -12,7 +12,6 @@
 #include <dynamic_reconfigure/server.h>
 #include <std_msgs/Header.h>
 #include <std_msgs/String.h>
-#include <nubot_control/DebugInfo.h>
 
 #include <iostream>
 #include <stdio.h>
@@ -40,8 +39,6 @@ public:
 
     ros::Publisher   motor_cmd_pub_;
     ros::Publisher   strategy_info_pub_;
-    ros::Publisher   debuginfo_pub_;
-    ros::Publisher   targetinfo_pub_;
     ros::Timer       control_timer_;
 
     boost::shared_ptr<ros::NodeHandle> nh_;
@@ -87,9 +84,7 @@ public:
         }
 #endif
         motor_cmd_pub_ = nh_->advertise<nubot_common::VelCmd>("nubotcontrol/velcmd",1);
-        debuginfo_pub_ = nh_->advertise<nubot_control::DebugInfo>("nubotcontrol/debug",1);
         strategy_info_pub_ =  nh_->advertise<nubot_common::StrategyInfo>("nubotcontrol/strategy",10);
-        targetinfo_pub_ = nh_->advertise<nubot_common::TargetInfo>("nubotcontrol/target",1);
         std::string  service = "BallHandle";
         ballhandle_client_ =  nh_->serviceClient<nubot_common::BallHandle>(service);
         std::string  service1 = "Shoot";
