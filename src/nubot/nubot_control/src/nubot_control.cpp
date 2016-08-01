@@ -60,20 +60,12 @@ public:
         ROS_INFO("initialize control process");
 
 #ifdef SIMULATION
-        std::string robot_name;
-        std::string robot_prefix;
-        ros::NodeHandle nh_tmp;
-        if(!nh_tmp.getParam("/field/robot_prefix", robot_prefix))
-        {
-            ROS_ERROR("world_model: cannot get robot_prefix. Default to \"bot\" ");
-            robot_prefix = "bot";
-        }
-        std::string str = argv[1];
-        std::string str2 = str.substr(str.size()-1);
-        environment = str2.c_str();
-        robot_name = robot_prefix + environment;
-        ROS_FATAL("robot_name:%s",robot_name.c_str());
-        nh_ = boost::make_shared<ros::NodeHandle>(robot_name);
+	std::string robot_name = argv[1];
+	std::string num = robot_name.substr(robot_name.size()-1);
+	//std::string robot_prefix = robot_name.substr(0,robot_name.size()-1);
+	environment = num.c_str();
+	ROS_FATAL("robot_name:%s",robot_name.c_str());
+	nh_ = boost::make_shared<ros::NodeHandle>(robot_name);
 #else
         nh_ = boost::make_shared<ros::NodeHandle>();
         // 读取机器人标号，并赋值. 在 .bashrc 中输入export AGENT=1，2，3，4，等等；
