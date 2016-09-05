@@ -17,7 +17,7 @@
    
    `$ ./configure`
    
-   `$ catkin_make -j1`
+   `$ catkin_make`
 
 ## RUN
 1. All components:
@@ -29,9 +29,20 @@
    $ rqt_image_view
 
 ## Error & Fix
-1. nubot_hwcontroller shows an error: 'pid *** died'.
-Fix: $ sc devel/lib/nubot_hwcontroller/nubot_hwcontroller_node
-2. help files are located in /doc folder; please refer to them
+1. Problem: nubot_hwcontroller shows an error: 'pid *** died'.   
+Solution: $ sc devel/lib/nubot_hwcontroller/nubot_hwcontroller_node   
+
+2. Problem: CMake Error at nubot/color_segment/CMakeLists.txt:40 (Qt5_WRAP_CPP):   
+  Unknown CMake command "Qt5_WRAP_CPP".   
+Explanation: using color_segment package to calibrate color-related parameters. This requires Qt since it has a Qt GUI.   
+Solution 1: You could just delete this package since it does not interfere with other parts. So the compile will go on.   
+Solution 2: Go to src/nubot/color_segment and edit CMakeLists.txt line 4; change the path to your Qt5Widgets.   
+
+3. Problem: hwcontroller_node.cpp:6:21: fatal error: ncurses.h: No such file or directory   
+ #include <ncurses.h>   
+Solution: `$ sudo apt-get install libncurses5-dev`   
+
+4. help files are located in /doc folder; please refer to them   
 
 
 ## Note

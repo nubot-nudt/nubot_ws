@@ -44,3 +44,4 @@ target_link_libraries(front_vision_node
     ${catkin_LIBRARIES}
     ${OpenCV_LIBS}
   )
+add_dependencies(front_vision_node ${catkin_EXPORTED_TARGETS})

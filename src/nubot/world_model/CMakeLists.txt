@@ -44,7 +44,7 @@ add_library(world_model  STATIC
                          src/MTTracker.cpp
                          src/iAuction.cpp
 )
-
+add_dependencies(world_model ${catkin_EXPORTED_TARGETS})
 target_link_libraries(world_model
     ${catkin_LIBRARIES}
 )
@@ -68,5 +68,5 @@ target_link_libraries(world_model_node
     rtdb
     multicast
 )
-
+add_dependencies(world_model_node ${catkin_EXPORTED_TARGETS})
 

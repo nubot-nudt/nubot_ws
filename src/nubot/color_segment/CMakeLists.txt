@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(color_segment)
 #set(EXECUTABLE_OUTPUT_PATH  "${PROJECT_SOURCE_DIR}/bin")
-set(CMAKE_PREFIX_PATH  ${CMAKE_PREFIX_PATH} "/home/winston/Qt5.3.2/5.3/gcc_64/lib/cmake/Qt5Widgets/")
+set(CMAKE_PREFIX_PATH  ${CMAKE_PREFIX_PATH} "/opt/Qt5.3.2/5.3/gcc_64/lib/cmake/Qt5Widgets/")
 #set(CMAKE_AUTOMOC ON)
 #set(CMAKE_INCLUDE_CURRENT_DIR ON)
 

@@ -214,7 +214,6 @@ public:
         vx = m_plan_.m_behaviour_.app_vx_;
         vy = m_plan_.m_behaviour_.app_vy_;
         w  = m_plan_.m_behaviour_.app_w_;
-        isturn = m_plan_.m_behaviour_.isTurn_;
         m_plan_.m_behaviour_.last_app_vx_ = m_plan_.m_behaviour_.app_vx_;
         m_plan_.m_behaviour_.last_app_vy_ = m_plan_.m_behaviour_.app_vy_;
         m_plan_.m_behaviour_.last_app_w_  = m_plan_.m_behaviour_.app_w_;

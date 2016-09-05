@@ -65,7 +65,7 @@ add_executable(nubot_control_node src/nubot_control.cpp
                                   src/passiverole.cpp
                                   src/staticpass.cpp
 )
-
+add_dependencies(nubot_control_node ${catkin_EXPORTED_TARGETS})
 target_link_libraries(nubot_control_node
    ${catkin_LIBRARIES}
  )

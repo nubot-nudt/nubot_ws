@@ -58,7 +58,7 @@ add_executable(omni_vision_node
       src/ballfinder.cpp
       src/obstacles.cpp
 )
-
+add_dependencies(omni_vision_node ${catkin_EXPORTED_TARGETS})
 target_link_libraries(omni_vision_node
     ${catkin_LIBRARIES}
     ${OpenCV_LIBS}

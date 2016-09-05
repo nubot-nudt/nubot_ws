@@ -45,4 +45,4 @@ catkin_package(
 
 add_executable(strategy_pub_node src/strategy_info.cpp)
 target_link_libraries(strategy_pub_node ${catkin_LIBRARIES})
-
+add_dependencies(strategy_pub_node ${catkin_EXPORTED_TARGETS})

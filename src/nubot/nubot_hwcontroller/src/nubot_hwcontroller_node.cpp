@@ -394,14 +394,14 @@ void Nubot_HWController::DribbleController()
            LeverPos_SetPoint += 0.01;
        }
 
-       if(isturn)
-       {
-           LeverPos_SetPoint = 2.0;
+//       if(isturn)
+//       {
+//           LeverPos_SetPoint = 2.0;
            /*if(w>0)
                LeverPos_ErrL = LeverPos_ErrL+1.0;
            else
                LeverPos_ErrR = LeverPos_ErrR+1.0;*/
-       }
+//       }
 
        LeverPos_ErrL = LeverPos_SetPoint - LeverPos_Left;
        LeverPos_ErrR = LeverPos_SetPoint - LeverPos_Right;
@@ -824,7 +824,6 @@ void Nubot_HWController::SetSpeed(const nubot_common::VelCmd::ConstPtr& cmd)
    Vx_cmd=cmd->Vx;
    Vy_cmd=cmd->Vy;
    w_cmd =cmd->w;
-   isturn=cmd->isTurn;
 
    Vxs.push_back(Vx_cmd);
    Ws.push_back(w_cmd);

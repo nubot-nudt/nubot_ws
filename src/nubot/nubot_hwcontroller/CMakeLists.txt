@@ -132,6 +132,8 @@ add_executable(nubot_teleop_joy src/nubot_teleop_joy.cpp)
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 add_dependencies(nubot_hwcontroller_node ${PROJECT_NAME}_gencfg)
+add_dependencies(nubot_hwcontroller_node ${catkin_EXPORTED_TARGETS})
+add_dependencies(nubot_teleop_joy ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(nubot_hwcontroller_node

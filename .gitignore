@@ -1,9 +1,11 @@
 ## Ignore build files
 build/
 devel/
+src/nubot/nubot_hwcontroller/
 
 ## Ignore camera calibration files
 # /src/nubot/omni_vision/calib_results/*
+# /src/nubot/front_vision/calib_results/*
 
 ## Ignore PID parameters
 # /src/nubot/nubot_hwcontroller/cfg/controller.cfg
