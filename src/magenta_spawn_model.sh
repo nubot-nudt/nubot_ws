@@ -13,14 +13,12 @@ kill_num=0
 ### spawn magenta robots
 for ((i=1; i<=magenta_num; ++i))
 do
-    j=$i+1                                              # skip the goal keeper
-
     # export AGENT=$j
-    rosrun world_model      world_model_node   ${magenta_prefix}${j}    __name:=${magenta_prefix}_world_model${j} &
+    rosrun world_model      world_model_node   ${magenta_prefix}${i}    __name:=${magenta_prefix}_world_model${i} &
     PIDS[kill_num]=$!
     let "kill_num=kill_num+1"
     
-    rosrun nubot_control    nubot_control_node ${magenta_prefix}${j}   __name:=${magenta_prefix}_nubot_control${j} &
+    rosrun nubot_control    nubot_control_node ${magenta_prefix}${i}   __name:=${magenta_prefix}_nubot_control${i} &
     PIDS[kill_num]=$!
     let "kill_num=kill_num+1"
     sleep 0.5

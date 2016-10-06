@@ -13,14 +13,12 @@ kill_num=0
 ### spawn cyan robots
 for ((i=1; i<=cyan_num; ++i))
 do
-    j=$i+1                                              # skip the goal keeper
-
     # export AGENT=$j
-    rosrun world_model      world_model_node   ${cyan_prefix}${j}    __name:=${cyan_prefix}_world_model${j} &
+    rosrun world_model      world_model_node   ${cyan_prefix}${i}    __name:=${cyan_prefix}_world_model${i} &
     PIDS[kill_num]=$!
     #let "kill_num=kill_num+1"
     
-    rosrun nubot_control    nubot_control_node ${cyan_prefix}${j}   __name:=${cyan_prefix}_nubot_control${j} &
+    rosrun nubot_control    nubot_control_node ${cyan_prefix}${i}   __name:=${cyan_prefix}_nubot_control${i} &
     PIDS[kill_num]=$!
     #let "kill_num=kill_num+1"
     sleep 0.5
