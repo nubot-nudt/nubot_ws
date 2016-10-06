@@ -20,6 +20,7 @@
    `$ catkin_make`
 
 ## RUN
+### For real robot applications
 1. All components:   
    ` $ roslaunch nubot_common nubot.launch`
 2. Joy stick and hardware controller   
@@ -27,6 +28,13 @@
    ` $ rosrun nubot_hwcontroller nubot_teleop_joy`
 3. Show images from the cameras   
    ` $ rqt_image_view`
+   
+### For simulation
+1. Please edit the file: [core.hpp][1] and uncomment '#define SIMULATION'; then compile the code again.
+2. Run the following commands:   
+` $ ./src/cyan_spawn_model.sh` for cyan robots,   
+or   
+` $ ./src/magenta_spawn_model.sh` for magenta robots.
 
 ## Error & Fix
 1. Problem: nubot_hwcontroller shows an error: 'pid *** died'.   
@@ -43,6 +51,7 @@ Solution: `$ sudo apt-get install libncurses5-dev`
 4. help files are located in /doc folder; please refer to them   
 
 
-## Note
-1. If you want to use the simulation function, please edit the file: src/nubot/nubot_common/core/include/nubot/core/core.hpp, and uncomment '#define SIMULATION'. Then compile the code again.For furthur tutorial, see related documentation in other repositories(i.e. 'gazebo_visual' or 'single_nubot_gazebo')
-2. contact info: nubot.nudt@outlook.com
+## Contact
+NuBot Team: nubot.nudt@outlook.com
+
+[1]: src/nubot/nubot_common/core/include/nubot/core/core.hpp
