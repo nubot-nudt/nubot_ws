@@ -39,6 +39,7 @@ or
 ## Error & Fix
 1. Problem: nubot_hwcontroller shows an error: 'pid *** died'.   
 Solution: ` $ sc devel/lib/nubot_hwcontroller/nubot_hwcontroller_node   `
+The command 'sc' is an alias of 'sudo setcap cap_net_raw=ep'
 
 2. Problem: CMake Error at nubot/color_segment/CMakeLists.txt:40 (Qt5_WRAP_CPP): Unknown CMake command "Qt5_WRAP_CPP".    
 Explanation: using color_segment package to calibrate color-related parameters. This requires Qt since it has a Qt GUI.   
