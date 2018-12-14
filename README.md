@@ -53,6 +53,6 @@ Solution: `$ sudo apt-get install libncurses5-dev`
 
 
 ## Contact
-NuBot Team: nubot.nudt@outlook.com
+NuBot Team: nubot.nudt@outlook.com or nubot.nudt@gmail.com
 
 [1]: src/nubot/nubot_common/core/include/nubot/core/core.hpp
